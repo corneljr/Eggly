@@ -94,6 +94,14 @@ angular
 	  	$scope.isEditing = false;
 	  };
 
+	  $scope.isSelectedBookmark = function(bookmarkId) {
+	  	return $scope.editedBookmark != null && $scope.editedBookmark.id == bookmarkId;
+	  };
 
+	  $scope.deleteBookmark = function(bookmark) {
+	  	_.remove($scope.bookmarks, function(b) {
+	  	return b.id == bookmark.id;
+	  })
+	  }
 
 	});
